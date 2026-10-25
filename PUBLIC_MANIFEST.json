@@ -1,0 +1,258 @@
+{
+  "files": [
+    {
+      "path": ".gitignore",
+      "sha256": "eb988474875163d43c718cca0d11dba200d4f67c7d23b60c14df2219685172f8",
+      "size": 156
+    },
+    {
+      "path": "PUBLICATION_CHECKLIST.md",
+      "sha256": "3f2e74948b57d79a650049e298d2b2e87f99d8d7b6eef00e79931de3f3c738f3",
+      "size": 1134
+    },
+    {
+      "path": "README.md",
+      "sha256": "3ebe9b9b68865aa97366b90132847865aca665758a285cf62754d26ebf9c53c5",
+      "size": 2833
+    },
+    {
+      "path": "SOURCE_MAP.md",
+      "sha256": "407cd431ee00f05a4e37949f3c77ef5bbd4f2f2d4acdd2cdbc5820d5d1c42f80",
+      "size": 2870
+    },
+    {
+      "path": "docs/API29_USABLE_BOOT.md",
+      "sha256": "24fddc460feae41aa883753899c5f179508d89b480d1bdf49688cd14a7eb891f",
+      "size": 3115
+    },
+    {
+      "path": "docs/BOOT_BOUNDARY.md",
+      "sha256": "f7a76eb964a9608e9ec665cafe78efc4e24f59ac96f4e57949e298c1bc238d38",
+      "size": 1611
+    },
+    {
+      "path": "docs/METHODOLOGY.md",
+      "sha256": "fbd64939500ea9aba60e94194445609ca1db0bccdf8fe871127895844a69aae2",
+      "size": 2359
+    },
+    {
+      "path": "docs/RESEARCH_STATUS.md",
+      "sha256": "0a20aac69e6de23854df0445bb9d178a814bb5da870dcc22fe983d8afbfaf42e",
+      "size": 3741
+    },
+    {
+      "path": "docs/SAFETY_AND_SCOPE.md",
+      "sha256": "e7b40e7672c9f22696bc757a3b5a8ed1e938c7005091303c4df1d5fd57fbfb7f",
+      "size": 1211
+    },
+    {
+      "path": "docs/TREE.md",
+      "sha256": "3ecf2b713b3483f47b56d2e3802b3503032f4576b316578002be23e9c234dfa2",
+      "size": 1945
+    },
+    {
+      "path": "evidence/public-findings.json",
+      "sha256": "53b3d1a9a6987497c3c693046393cc069d6799971d6663482ca55f7912a50a62",
+      "size": 4797
+    },
+    {
+      "path": "private-fixtures/README.md",
+      "sha256": "1d6b01a2a929d00d598ef2469ab4f77b3afa1984602fe5d03993e84b1b926a3a",
+      "size": 758
+    },
+    {
+      "path": "scripts/audit_rrecord_freshness.py",
+      "sha256": "08ccc145ea3cf8f74765a5afc441f3d13208460b11f52bca40a3bbc47c073640",
+      "size": 2930
+    },
+    {
+      "path": "scripts/audit_rrecord_full.py",
+      "sha256": "66886d644581559a9fad7d5c3b61d0acaeda06ef9bc3de71fc1b8059ebf39987",
+      "size": 7934
+    },
+    {
+      "path": "scripts/build_api29_fscrypt_adb_fix.py",
+      "sha256": "131fa65741fcf154b6e9aaf76d5f9109775eecd1466a65acbfb5e953397239e2",
+      "size": 14560
+    },
+    {
+      "path": "scripts/build_boot_system_noavb.py",
+      "sha256": "52ff5e1637103a67d9798f6df90740000ada716da6cf9a87ea4fe0cf2517a338",
+      "size": 17619
+    },
+    {
+      "path": "scripts/build_coherent_boot_avb_chain.py",
+      "sha256": "b115ab46226ce89fe48bae4c8d58617e755c7088bb34a599421094c4bd4996d0",
+      "size": 13196
+    },
+    {
+      "path": "scripts/build_context_closed_super.py",
+      "sha256": "4b63b285e0ff6a05f03d1dbbd73de9716d11c0a91a2e92488059633797c48788",
+      "size": 10028
+    },
+    {
+      "path": "scripts/build_diagnostic_normal_ramdisk.py",
+      "sha256": "e9bf65ea862caa8065043e7bbabf2a7c53fa8c45f04ca2939054b9d3ac4f3463",
+      "size": 18412
+    },
+    {
+      "path": "scripts/build_w1_normal_ramdisk.py",
+      "sha256": "f1cc4fce01ccf5daf3adc9f56810911eec45f7ccb09de8a53d28e13b7a692b28",
+      "size": 5932
+    },
+    {
+      "path": "scripts/build_w2_lineage_ramdisk.py",
+      "sha256": "6b65027f0ed630d6e13795339841f229e78f1577c02ca0922feaa3d85e3f5e27",
+      "size": 6827
+    },
+    {
+      "path": "scripts/build_w6_switch_root_probe_ramdisk.py",
+      "sha256": "5715844504391b5327df6d5e6bd83dbba605c07cd539252c4dda8b96a8412a91",
+      "size": 6901
+    },
+    {
+      "path": "scripts/build_w7_lineage_exec_probe_ramdisk.py",
+      "sha256": "99a6b073a25dcf49886e2abdca3d6a17f8e5d70acc5bfaba370e3fa9c4433580",
+      "size": 6779
+    },
+    {
+      "path": "scripts/build_w8_lineage_entry_probe.py",
+      "sha256": "560a24685a1bcff4e829f7c8f7960efb239f3faffabcabc86f66c2ab5529711f",
+      "size": 22723
+    },
+    {
+      "path": "scripts/build_w9_lineage_main_probe.py",
+      "sha256": "3ed8090bf633f0a420eb2f432d28fe25e8308b66d8368461244200dbbaaf3686",
+      "size": 12297
+    },
+    {
+      "path": "scripts/diagnostic_normal_init.c",
+      "sha256": "55e36c1d7782b0585aca9e19c00717334b60b5dbd7a4c935ba2d61af0ca5a965",
+      "size": 10664
+    },
+    {
+      "path": "scripts/parse_w1_witness.py",
+      "sha256": "7d8d77b1322f0be2295da36f79f1e79fd1aa44eecdefe924d983f4679eec9fac",
+      "size": 20878
+    },
+    {
+      "path": "scripts/parse_w2_witness.py",
+      "sha256": "219fb0064ade67c105fad92a1a999227d5c8afb7c9865d7e99027726d0e946e1",
+      "size": 14122
+    },
+    {
+      "path": "scripts/patch_embedded_vbmeta_flags.py",
+      "sha256": "3db94e41d4b24cf28a54a6b25a0c9fcb686dcb3842d6e8df2d80bee79e06bc0f",
+      "size": 4286
+    },
+    {
+      "path": "scripts/verify_w1_live_gate.py",
+      "sha256": "df461773755b7a75848a4fc1ecddd1894472d7ef45f0390e950a25c8499515f1",
+      "size": 4857
+    },
+    {
+      "path": "scripts/w1_normal_witness.c",
+      "sha256": "8ef6b6b323e064e7d8a545a0c77ca87e44a120fa5042c689fd6ce81b42b8e708",
+      "size": 48795
+    },
+    {
+      "path": "scripts/w2_lineage_second_stage_witness.c",
+      "sha256": "ae18d0d489a87063665f46b18bedda700ac903d90ebedeeba19953b9b61aa8e1",
+      "size": 25336
+    },
+    {
+      "path": "scripts/w6_switch_root_stage_probe.c",
+      "sha256": "727633d8a14c569947e361efdb89601a78d40625e71b5d0a510a0ba8ce5ff9c4",
+      "size": 11261
+    },
+    {
+      "path": "scripts/w8_lineage_entry_probe.S",
+      "sha256": "21bb97c4c844226448cbcf7d0bad19758460687d330f4ae7f0884b969a06f3ed",
+      "size": 958
+    },
+    {
+      "path": "scripts/w9_lineage_main_probe.S",
+      "sha256": "cf0175c0bccb219f66da0531d977b10ba0997a7029c2a45247d227713ac5b917",
+      "size": 883
+    },
+    {
+      "path": "tests/test_audit_rrecord_full.py",
+      "sha256": "c5895fccf1f8b9281ddd09206091cfafeb8ab45c639b0ecbf2cddc1b9dccfb94",
+      "size": 5172
+    },
+    {
+      "path": "tests/test_build_api29_fscrypt_adb_fix.py",
+      "sha256": "e38626fe3aa1e8abe248ca36cee1ae89477d84535f8e0b93f6936a2728cc7ffb",
+      "size": 3958
+    },
+    {
+      "path": "tests/test_build_boot_system_noavb.py",
+      "sha256": "51a09822366d972edd4592c46167a990c5d7e0ea99aa41270d40563800ca6f72",
+      "size": 12198
+    },
+    {
+      "path": "tests/test_build_context_closed_super.py",
+      "sha256": "e65b8237c9dd5d1914f6afe69b66e290f32cf74d025d310d0ec8c36d7572b13b",
+      "size": 4963
+    },
+    {
+      "path": "tests/test_build_diagnostic_normal_ramdisk.py",
+      "sha256": "6eb52d03f04d7d51a1a2d0ca4c023eb3fdbb8e9371b238389b692e1eb0c0646e",
+      "size": 6525
+    },
+    {
+      "path": "tests/test_build_w1_normal_ramdisk.py",
+      "sha256": "613a866ffbfc15814bc7dc863ae82104f9d2ab45ad997e775bacd33b47a02471",
+      "size": 28161
+    },
+    {
+      "path": "tests/test_build_w2_lineage_ramdisk.py",
+      "sha256": "57a5fc1a84ac1fde2fec584c0201e7483dce2d7941103d4d7a2b0df3cce93376",
+      "size": 5907
+    },
+    {
+      "path": "tests/test_build_w6_switch_root_probe.py",
+      "sha256": "75f69680142cce893e475823f8cf2df268f4a5a82d616287c9536f814fe38aa2",
+      "size": 6401
+    },
+    {
+      "path": "tests/test_build_w7_lineage_exec_probe.py",
+      "sha256": "a743a2f416bd916b98c1e378e3e8ac17acca5da70cd149648877259ffcbfbc06",
+      "size": 5236
+    },
+    {
+      "path": "tests/test_build_w8_lineage_entry_probe.py",
+      "sha256": "b35ecb249aa7b85692e0723c29210fe136c962099348874db6ab2969eb9cf88d",
+      "size": 5576
+    },
+    {
+      "path": "tests/test_build_w9_lineage_main_probe.py",
+      "sha256": "2ea8c18dae9c059eb5fdf546ebf9607936b1d36a717e3ed7d477d8cb6bcebccf",
+      "size": 3636
+    },
+    {
+      "path": "tests/test_parse_w1_witness.py",
+      "sha256": "07224f1239352e037951dc807366c848d8dc449a2ca05fd489ea30f5f3dddc89",
+      "size": 19217
+    },
+    {
+      "path": "tests/test_parse_w2_witness.py",
+      "sha256": "da31a6ba0047b613627e9b5b9a59a265af82a4bb21347e82299ba38d2d38daf6",
+      "size": 8397
+    },
+    {
+      "path": "tests/test_verify_w1_live_gate.py",
+      "sha256": "bbff9d39fd30831696715831fc038b58fdb576d5d26d5181919b0393e0cc69f1",
+      "size": 3819
+    },
+    {
+      "path": "tools/validate_public_tree.py",
+      "sha256": "1f76d2c968099e717d7c8412ac712874e4f8555121e1bf59b788b788c14fc385",
+      "size": 7221
+    }
+  ],
+  "hash_algorithm": "sha256",
+  "manifest_excluded_from_inventory": true,
+  "schema": "dby-w09-public-manifest-v1",
+  "tree_sha256": "914c99acd25f963537e4431c8aaf95518debf1aa96f1a89a45bab9000e2a3163"
+}
