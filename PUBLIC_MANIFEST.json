@@ -7,18 +7,18 @@
     },
     {
       "path": "PUBLICATION_CHECKLIST.md",
-      "sha256": "3f2e74948b57d79a650049e298d2b2e87f99d8d7b6eef00e79931de3f3c738f3",
-      "size": 1134
+      "sha256": "87f24604b3656c1104048ee00ddf07fbbe02b871ba0ed65251ea33f56d40a981",
+      "size": 1281
     },
     {
       "path": "README.md",
-      "sha256": "3ebe9b9b68865aa97366b90132847865aca665758a285cf62754d26ebf9c53c5",
-      "size": 2833
+      "sha256": "e0a6ee9dce3ed0aa9569ad07688ad13dbb3a16b4be7d9cafbf40d540b98a467b",
+      "size": 3127
     },
     {
       "path": "SOURCE_MAP.md",
-      "sha256": "407cd431ee00f05a4e37949f3c77ef5bbd4f2f2d4acdd2cdbc5820d5d1c42f80",
-      "size": 2870
+      "sha256": "bcb81ee6f23fb4997ae385f9af26c3262105f7e1c91999bdd76c3196bf05b74f",
+      "size": 3247
     },
     {
       "path": "docs/API29_USABLE_BOOT.md",
@@ -26,9 +26,14 @@
       "size": 3115
     },
     {
+      "path": "docs/API30_NFC_COMPATIBILITY.md",
+      "sha256": "789883ed4f32c0a2315651a1f4313a06d06f15514e7b2b813d7dde954e853334",
+      "size": 3908
+    },
+    {
       "path": "docs/BOOT_BOUNDARY.md",
-      "sha256": "f7a76eb964a9608e9ec665cafe78efc4e24f59ac96f4e57949e298c1bc238d38",
-      "size": 1611
+      "sha256": "5b6cb8d7d506904215f8b0589b9b94eaa4cd60608b844e0cf39959852c7ff24f",
+      "size": 1865
     },
     {
       "path": "docs/METHODOLOGY.md",
@@ -37,8 +42,8 @@
     },
     {
       "path": "docs/RESEARCH_STATUS.md",
-      "sha256": "0a20aac69e6de23854df0445bb9d178a814bb5da870dcc22fe983d8afbfaf42e",
-      "size": 3741
+      "sha256": "ca1cf1039668d4301586af3e786df0b4e1fd1569ce3c91acd9cd164b6406e676",
+      "size": 5339
     },
     {
       "path": "docs/SAFETY_AND_SCOPE.md",
@@ -47,13 +52,13 @@
     },
     {
       "path": "docs/TREE.md",
-      "sha256": "3ecf2b713b3483f47b56d2e3802b3503032f4576b316578002be23e9c234dfa2",
-      "size": 1945
+      "sha256": "6521dd0526d2d2d83447adf9b605b892096025e02ba3068907bc551628dfe6d3",
+      "size": 2143
     },
     {
       "path": "evidence/public-findings.json",
-      "sha256": "53b3d1a9a6987497c3c693046393cc069d6799971d6663482ca55f7912a50a62",
-      "size": 4797
+      "sha256": "169601a9c1b5b0eb4e84dc75c397d1bb2c4857252f5b4cb8b5a38077563fce8f",
+      "size": 6758
     },
     {
       "path": "private-fixtures/README.md",
@@ -74,6 +79,16 @@
       "path": "scripts/build_api29_fscrypt_adb_fix.py",
       "sha256": "131fa65741fcf154b6e9aaf76d5f9109775eecd1466a65acbfb5e953397239e2",
       "size": 14560
+    },
+    {
+      "path": "scripts/build_api30_init_nfc_legacy_compat.py",
+      "sha256": "35343241a1eef8e260f91887ce04f7d69d616649589f6ef8ae7ebaf168b1e027",
+      "size": 15698
+    },
+    {
+      "path": "scripts/build_api30_nfc_fscrypt_fix.py",
+      "sha256": "4d7b7e4b7efcb7fc60805214c9508a5a3fc88589814ffea620d79a0a05766093",
+      "size": 13909
     },
     {
       "path": "scripts/build_boot_system_noavb.py",
@@ -146,6 +161,16 @@
       "size": 4286
     },
     {
+      "path": "scripts/verify_api30_init_nfc_legacy_compat.py",
+      "sha256": "5248baa756fafa4c47327250626f131c2b80c692f7d3c66654efae9943de7154",
+      "size": 9747
+    },
+    {
+      "path": "scripts/verify_api30_nfc_fscrypt_fix.py",
+      "sha256": "9cb02243976766830fd11793d06d053d691d22c726a2e243ed5b878a9106faef",
+      "size": 10111
+    },
+    {
       "path": "scripts/verify_w1_live_gate.py",
       "sha256": "df461773755b7a75848a4fc1ecddd1894472d7ef45f0390e950a25c8499515f1",
       "size": 4857
@@ -184,6 +209,16 @@
       "path": "tests/test_build_api29_fscrypt_adb_fix.py",
       "sha256": "e38626fe3aa1e8abe248ca36cee1ae89477d84535f8e0b93f6936a2728cc7ffb",
       "size": 3958
+    },
+    {
+      "path": "tests/test_build_api30_init_nfc_legacy_compat.py",
+      "sha256": "d1a1fd5ac8da195246d7378b0383f8d85e725ed57057babea7c2f70b9cbb984f",
+      "size": 8211
+    },
+    {
+      "path": "tests/test_build_api30_nfc_fscrypt_fix.py",
+      "sha256": "f9b6581f91d190aff6ced413a70a536f3301bfaffee4598bb75ef61e21d74498",
+      "size": 5948
     },
     {
       "path": "tests/test_build_boot_system_noavb.py",
@@ -254,5 +289,5 @@
   "hash_algorithm": "sha256",
   "manifest_excluded_from_inventory": true,
   "schema": "dby-w09-public-manifest-v1",
-  "tree_sha256": "914c99acd25f963537e4431c8aaf95518debf1aa96f1a89a45bab9000e2a3163"
+  "tree_sha256": "93e4d9b8a1e179bf01a62171fda1a8f0ca18ec53bfc467b4389b211b3a26e82c"
 }

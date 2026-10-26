@@ -8,6 +8,7 @@ dby-w09-boot-research/
 ├── PUBLICATION_CHECKLIST.md     completed publication gates
 ├── docs/
 │   ├── API29_USABLE_BOOT.md     first usable Android UI milestone
+│   ├── API30_NFC_COMPATIBILITY.md Android 11 NFC repair and live result
 │   ├── RESEARCH_STATUS.md       evidence, limits and next questions
 │   ├── BOOT_BOUNDARY.md         proven control-flow boundary
 │   ├── METHODOLOGY.md           evidence and rollback discipline
@@ -22,6 +23,7 @@ dby-w09-boot-research/
 │   ├── build_*boot*.py          boot and AVB offline builders
 │   ├── build_context_closed_super.py
 │   ├── build_api29_fscrypt_adb_fix.py
+│   ├── build_api30_*              Android 11 NFC controls and repair
 │   ├── build_diagnostic_normal_ramdisk.py
 │   ├── build_w*.py              staged probe builders
 │   ├── w*.c / w*.S              minimal stage witnesses
@@ -33,5 +35,6 @@ dby-w09-boot-research/
 ```
 
 The private source tree remains much larger because it preserves raw chronology,
-device-specific evidence and immutable artifact paths. This public repository
-is intentionally a source-and-findings view, not a recoverable firmware bundle.
+device-specific evidence, screenshots and immutable artifact paths. This
+public repository is intentionally a source-and-findings view, not a
+recoverable firmware bundle or live flashing workflow.

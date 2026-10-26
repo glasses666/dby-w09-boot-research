@@ -1,6 +1,6 @@
 {
   "schema": "dby-w09-public-findings-v1",
-  "as_of": "2026-10-25",
+  "as_of": "2026-10-26",
   "scope": {
     "authorization": "owner-operated single-device research",
     "public_artifacts": "source-and-sanitized-findings-only",
@@ -83,14 +83,46 @@
       "limit": "Camera remained unavailable and the remaining hardware and persistence matrix was not completed.",
       "super_sha256": "55b043413e9865ed55cb7e6eb1ff152f98ab8ddb9343df0bec1d10e5d7383281",
       "boot_sha256": "2fe0e69809aa47ff32e11b4735a4295ce36025e497f38878451390dc50d58fb4"
+    },
+    {
+      "id": "PF-010",
+      "stage": "API30-NFC-controls",
+      "result": "recovery-localized",
+      "finding": "Clean userdata and two system-side controls still reached set_policy_failed:/data/nfc, binding the remaining caller to Android 11 init's inferred policy for Huawei's legacy plain vendor mkdir.",
+      "limit": "The controls identified the rule but did not yet provide a valid repair."
+    },
+    {
+      "id": "PF-011",
+      "stage": "API30-vendor-edit",
+      "result": "invalidated",
+      "finding": "The direct vendor edit changed authenticated payload bytes while preserving the old AVB footer and authentication metadata.",
+      "limit": "Its endpoint is not evidence that modified vendor userspace executed; the candidate must not be reused."
+    },
+    {
+      "id": "PF-012",
+      "stage": "API30-v4-offline",
+      "result": "offline-pass",
+      "finding": "Five encoded init bytes repurposed the redundant inferred gsi exclusion as nfc while vendor and every byte outside the exact patch window remained unchanged.",
+      "limit": "Offline qualification was not treated as execution evidence.",
+      "init_sha256": "349f2f8dc2e51d6e4d02b183a9c2e236314f32a679a61298bfeac0426d02ec4a",
+      "system_sha256": "c411632f32664678005296281f78ccf3978f24363b247968de6e67e24cc094f5",
+      "super_sha256": "23b9dfa572241cf6ca3ccf7025f163db5de918cd8dc13ee73a80486eb5b06598"
+    },
+    {
+      "id": "PF-013",
+      "stage": "API30-v4-live",
+      "result": "core-system-pass",
+      "finding": "Complete pre/post readbacks passed and Android 11 booted with second-stage init, both boot-complete properties, writable encrypted data, Enforcing, Launcher/Settings and retained UID 0 with full capabilities.",
+      "limit": "Post-success reboot and the remaining hardware and stability matrix were not completed.",
+      "super_sha256": "23b9dfa572241cf6ca3ccf7025f163db5de918cd8dc13ee73a80486eb5b06598"
     }
   ],
-  "current_boundary": "usable API29 Android framework and launcher; hardware bring-up remains incomplete",
+  "current_boundary": "accepted Android 11/API30 core system; reboot persistence and hardware bring-up remain incomplete",
   "not_claimed": [
     "complete hardware support",
-    "reboot persistence or long-duration stability",
+    "post-success reboot persistence or long-duration stability",
     "daily-use security suitability",
-    "compatibility with a newer Android release",
+    "compatibility with Android 12L or later",
     "a general Huawei unlock method"
   ]
 }
