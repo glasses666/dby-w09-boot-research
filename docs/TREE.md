@@ -10,6 +10,7 @@ dby-w09-boot-research/
 │   ├── API29_USABLE_BOOT.md     first usable Android UI milestone
 │   ├── API30_NFC_COMPATIBILITY.md Android 11 NFC repair and live result
 │   ├── API32_GNSS_1_1_SUCCESS.md accepted Android 12/GNSS milestone
+│   ├── API32_DAILY_BRINGUP.md  API32 hardware, speaker and optional-service boundary
 │   ├── RESEARCH_STATUS.md       evidence, limits and next questions
 │   ├── BOOT_BOUNDARY.md         proven control-flow boundary
 │   ├── METHODOLOGY.md           evidence and rollback discipline
@@ -26,6 +27,7 @@ dby-w09-boot-research/
 │   ├── build_api29_fscrypt_adb_fix.py
 │   ├── build_api30_*              Android 11 NFC controls and repair
 │   ├── build_api32_*             target VINTF replay and GNSS 1.1 candidate
+│   ├── build_api32_vendor_enhanced_detector_overlay.py four-byte speaker candidate
 │   ├── audit_api32_*             exact-target replay audit
 │   ├── qualify_api32_*           paired-build and replay qualification
 │   ├── build_diagnostic_normal_ramdisk.py

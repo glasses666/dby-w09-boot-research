@@ -17,6 +17,7 @@ and previously removed objects cannot leak through ancestry.
 | `scripts/verify_api30_*.py` | matching private verifiers | Offline byte, filesystem and instruction gates |
 | `scripts/build_api32_*gnss_1_1*.py` and matching verifier/qualifier | same repository-relative paths | Deterministic API32 framework-manifest correction and whole-image qualification |
 | `scripts/build_api32_vintf_target_replay.py`, `scripts/audit_api32_vintf_target_replay.py` | same repository-relative paths | Rebuild and audit the exact-target VINTF replay harness without distributing target binaries |
+| `scripts/build_api32_vendor_enhanced_detector_overlay.py` | same repository-relative path | Four-byte hash-gated speaker-arbitration candidate; vendor input/output excluded |
 | `scripts/stream_readback_compare.py` | same repository-relative path | Complete streamed comparison without retaining a second partition-sized image |
 | `scripts/build_diagnostic_normal_ramdisk.py` | same repository-relative path | Shared ramdisk parser and builder |
 | `scripts/build_w*.py` | selected private staged builders | W1/W2/W6/W7/W8/W9 candidate construction |
@@ -24,7 +25,7 @@ and previously removed objects cannot leak through ancestry.
 | `scripts/parse_w*.py` | matching private parsers | Strict nonce, checksum and record interpretation |
 | `scripts/verify_w1_live_gate.py` | same repository-relative path | Read-only manifest-bound verification |
 | `tests/` | selected private tests | Synthetic checks and explicit private-fixture skips |
-| `docs/`, `evidence/` | synthesized from hash-bound private reports | Sanitized API29/API30/API32 findings and interpretation limits |
+| `docs/`, `evidence/` | synthesized from hash-bound private reports | Sanitized API29/API30/API32 boot, hardware, audio and optional-service findings |
 
 Public tests replace researcher-specific paths with explicit fixtures or test
 synthetic helper functions. Production hashes remain where they are part of a
@@ -38,6 +39,7 @@ fail-closed build contract.
 | Raw logs, screenshots and partition dumps | Device identifiers and personal state |
 | Firehose/EDL executables and configuration | Proprietary or device-specific transport material |
 | Live write, erase, reset and recovery-root automation | This is not a one-click flashing repository |
+| APatch modules, GApps packages, VPN profiles and node details | Third-party binaries, root payloads, account scope and private infrastructure |
 | REA/Ghidra snapshots and proprietary disassembly packages | May embed vendor code and private paths |
 | Full internal chronology and operator handoffs | Contains private identifiers and operational details |
 | Generated binaries and test fixtures | Users must supply local inputs and accept their own authorization boundary |

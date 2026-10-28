@@ -1,5 +1,9 @@
 # Android 12/API32 GNSS 1.1 milestone
 
+> This document preserves the boundary at the moment API32 first reached a
+> stable Launcher. Later hardware, speaker, Google-service and VPN results are
+> recorded in [`API32_DAILY_BRINGUP.md`](API32_DAILY_BRINGUP.md).
+
 ## Result
 
 The retained DBY-W09 research system now boots Android 12/API32 to a visible
@@ -61,10 +65,10 @@ published source-level result.
 
 ## Remaining limits
 
-This milestone proves GNSS registration and framework availability, not an
-actual satellite fix. It also does not yet prove reboot persistence,
-suspend/resume, camera, audio, Bluetooth, Wi-Fi, DRM or long-duration stability.
-Those surfaces must be tested independently on the retained API32 baseline.
+At this milestone, GNSS registration and framework availability were proved,
+not an actual satellite fix. Reboot persistence and many hardware surfaces
+were still open at this point; later work closed several of those gates without
+retroactively changing what this experiment alone established.
 
 The public scripts intentionally stop at deterministic construction, target
 replay, qualification and readback comparison. They do not implement a live

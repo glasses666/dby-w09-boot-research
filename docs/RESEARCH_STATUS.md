@@ -2,19 +2,27 @@
 
 ## Current result
 
-The latest positive experiment is the GNSS 1.1-only API32 candidate. It reached
-a stable Android 12 desktop with second-stage init, both boot-complete
-properties, SystemServer, SurfaceFlinger and Launcher3 running. Settings opened
-and the device returned to the home screen. The candidate remains installed.
+The retained GNSS 1.1-only API32 candidate is now a substantially usable
+Android 12 tablet baseline. It has crossed repeated cold boots with second-stage
+init, both boot-complete properties, SystemServer, SurfaceFlinger, Launcher3,
+Enforcing, encrypted data and retained root. Reversible bring-up passed display,
+touch, GPU, sensors, storage, Wi-Fi, Bluetooth discovery, camera capture, DRM
+capability and nonzero microphone sampling.
 
-The current engineering boundary is API32 hardware bring-up and persistence,
-not basic Android startup or the old GNSS registration gate. The project can
-retain API32 as its working baseline while testing hardware surfaces
-independently.
+Speaker playback was localized beyond the initial hardware-variant hypothesis.
+The real TFA9874 amplifier path was correct; missing vendor-enhanced state made
+the Audio HAL select an absent Cirrus protection path. A four-byte
+hash-qualified candidate restored mono/stereo playback, and a root-managed
+single-file bind passed cold-boot machine gates without a partition write.
 
-It does **not** prove an actual satellite fix, camera, Bluetooth, audio,
-microphone, DRM, Wi-Fi, suspend/resume, reboot persistence, long-duration
-stability or compatibility with a release newer than API32.
+Optional systemless Google services and a local two-path Android VPN also passed
+their bounded acceptance gates. Their packages, account material, server
+addresses and credentials remain private.
+
+The current boundary is no longer basic boot or general hardware enumeration.
+It is actual satellite positioning, unplugged suspend/resume, rear torch,
+Bluetooth pairing, long-duration stability, post-persistence human stereo
+confirmation and compatibility with any release newer than API32.
 
 ## Evidence to finding
 
@@ -32,6 +40,11 @@ stability or compatibility with a release newer than API32.
 | API30 v4 live attempt | Complete pre/post readbacks passed; Android 11 boot completed with encrypted data, Enforcing, Launcher/Settings and retained UID 0 | The NFC compatibility patch crossed the Recovery boundary and produced an accepted API30 core system | Reboot persistence and the remaining hardware matrix were still pending at that stage |
 | Exact-target API32 VINTF replay | Target `libvintf` rejected the duplicate same-major GNSS input and accepted the source-derived 1.1-only correction | Host compatibility was insufficient; the target aggregation rule selected the minimal framework change | This was still offline evidence |
 | API32 GNSS 1.1-only live attempt | Complete prewrite/write/readback gates passed; boot completed; Launcher was visible; keystore2/system_suspend remained stable; GNSS 1.0/1.1/2.0 and an enabled GPS provider were visible | The corrected framework declaration crossed both the prior service-abort family and GNSS registration boundary while preserving boot/vendor | Satellite fix, persistence and the broader hardware matrix remain open |
+| API32 hardware snapshot | Thirteen bounded sections plus reversible app tests covered display/input/GPU, sensors, storage, Wi-Fi, Bluetooth discovery, DRM, camera and microphone | Most daily hardware surfaces work on the retained API32 baseline | GNSS fix, torch, pairing and USB-free suspend remain open |
+| API32 speaker candidate | Exact hardware identity, property/arbitration flow, four-byte builder and repeated audible mono/stereo trials agreed | Missing vendor-enhanced state, not the amplifier family, selected the wrong speaker-protection branch | Vendor binary and persistent payload remain private |
+| API32 persistent speaker layer | Cold boot retained root and Enforcing; one hash-gated bind produced the candidate live hash and corrected HAL path | Speaker compatibility can be delivered systemlessly without a partition rewrite | The post-persistence left/right sequence passed machine gates but lacks separate human confirmation |
+| API32 Google services | Read-only systemless mounts registered GSF, GMS and Play Store; a real account was added with no credential capture | The minimum Google service layer is usable on this API32 build | App download, certification and Integrity are not claimed |
+| API32 local VPN | Two private selectable paths returned HTTPS 204 with distinct egress identities through the tablet core | A removable Android VPN layer works without changing the system image | Profile and infrastructure remain private and are not published |
 
 ## Chronology
 
@@ -52,14 +65,16 @@ stability or compatibility with a release newer than API32.
 | API32 diagnostic baseline | Can Android 12 reach second-stage with early ADB and expose the first framework blocker? | Yes; the blocker localized to GNSS VINTF inheritance |
 | API32 target replay | Does target aggregation accept the original two-version framework patch? | No; a 1.1-only source-derived correction restores aggregation |
 | API32 corrected live | Does the corrected candidate preserve core services and reach a usable UI? | Yes; boot-complete Launcher, stable core services and GNSS registration |
+| API32 hardware bring-up | Do the main tablet hardware surfaces work on the retained system? | Most pass; actual GNSS fix, torch, pairing and USB-free suspend remain open |
+| API32 speaker bring-up | Can playback be restored without rewriting vendor? | Yes; a four-byte detector candidate and hash-gated boot-time bind select the correct generic path |
+| API32 optional services | Can Google services and a removable VPN coexist with root, Enforcing and the speaker layer? | Yes within the published acceptance limits |
 
 ## Next research questions
 
-1. Prove API32 reboot persistence before changing the retained system.
-2. Test actual satellite positioning separately from GNSS registration.
-3. Complete reversible API32 smoke tests for display/input/GPU, Wi-Fi,
-   Bluetooth, audio/microphone, camera, DRM and suspend/resume.
-4. Localize each failure to framework, policy, vendor HAL or kernel before
-   considering another system generation.
+1. Test actual satellite positioning separately from GNSS registration.
+2. Prove suspend and wake with USB absent and a separate return path.
+3. Complete rear-torch, Bluetooth-pairing and post-persistence human stereo
+   acceptance as separate reversible tests.
+4. Run a longer stability window and a real Play Store application download.
 5. Treat every newer system as a new compatibility experiment; do not infer
    success from API level alone.

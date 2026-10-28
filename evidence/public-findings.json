@@ -1,6 +1,6 @@
 {
   "schema": "dby-w09-public-findings-v1",
-  "as_of": "2026-10-28",
+  "as_of": "2026-10-29",
   "scope": {
     "authorization": "owner-operated single-device research",
     "public_artifacts": "source-and-sanitized-findings-only",
@@ -138,17 +138,58 @@
       "stage": "API32-GNSS-1.1-live",
       "result": "core-runtime-ui-pass",
       "finding": "After complete prewrite and postwrite gates and one normal reset, Android 12 reached second-stage init, boot completion and a visible Launcher with vendor-verity, stable keystore2/system_suspend, SurfaceFlinger, system_server and GNSS registration.",
-      "limit": "Actual satellite fix, reboot persistence and the broader hardware matrix remain unproved.",
+      "limit": "This experiment alone did not prove an actual satellite fix, reboot persistence or the broader hardware matrix; later findings address some of those gates separately.",
       "super_sha256": "a2826268ea5566d25ca963ec371f4cd721e25d6d4175b08662b6bbe66d5030a1",
       "framework_manifest_sha256": "e1709cc931677e71ac3c51257ac9e207060f95f3449b28ec5f676f992640df07"
+    },
+    {
+      "id": "PF-017",
+      "stage": "API32-hardware-bring-up",
+      "result": "most-hardware-pass",
+      "finding": "A bounded hardware snapshot and reversible app tests passed display, touch, GPU, sensors, encrypted storage, validated Wi-Fi, Bluetooth discovery, Widevine L1 instantiation, camera preview/JPEG and nonzero microphone capture.",
+      "limit": "Actual satellite positioning, rear torch, Bluetooth pairing, USB-free suspend/resume and controlled acoustic microphone quality remain open."
+    },
+    {
+      "id": "PF-018",
+      "stage": "API32-speaker-compatibility",
+      "result": "candidate-live-pass",
+      "finding": "The live amplifiers are NXP TFA9874 devices; missing vendor-enhanced state selected an absent Cirrus path. A four-byte detector candidate returned the stock ODM-only value, selected generic speaker protection and restored audible mono/stereo playback.",
+      "limit": "The proprietary vendor library is not distributed, and transient live acceptance did not by itself prove persistence.",
+      "source_sha256": "1927811cdf681ab289ae32b73c6e59f94e63b505a7763a445db2942f5e179156",
+      "candidate_sha256": "706c5d92e7d6416b9ed194ede6e65e61259565a8d1ffa0dfada3cd096d72560c",
+      "patch_offset": 4140,
+      "changed_byte_count": 4
+    },
+    {
+      "id": "PF-019",
+      "stage": "API32-speaker-persistence",
+      "result": "persistent-machine-pass",
+      "finding": "A hash-gated root-managed single-file bind survived cold boot, produced the accepted live detector hash before Audio HAL startup and retained root, Enforcing, radios and volume without a partition write.",
+      "limit": "The post-persistence left/right frame sequence passed machine gates, but a separate human confirmation of that exact persistent-boot sequence was not recorded."
+    },
+    {
+      "id": "PF-020",
+      "stage": "API32-google-services",
+      "result": "account-addition-pass",
+      "finding": "Systemless read-only mounts registered GSF, Google Play services and Play Store as privileged system packages, and a real Google account was added while root, Enforcing and the speaker layer remained active.",
+      "limit": "No account identifier, credential or token is published; application download, Play Protect certification and Play Integrity are not claimed."
+    },
+    {
+      "id": "PF-021",
+      "stage": "API32-local-vpn",
+      "result": "two-path-pass",
+      "finding": "A removable Android VPN profile exposed two selectable private paths; both returned HTTPS 204 through the tablet core with distinct public egress identities.",
+      "limit": "The client package, private profile, server addresses, credentials and infrastructure details are excluded from this repository."
     }
   ],
-  "current_boundary": "boot-complete API32 Android framework, Launcher and GNSS registration; persistence, satellite fix and hardware bring-up remain incomplete",
+  "current_boundary": "reboot-persistent API32 with most hardware surfaces, systemless speaker compatibility, Google account addition and two-path local VPN accepted; satellite fix, USB-free suspend, torch, pairing and long-duration stability remain open",
   "not_claimed": [
     "complete hardware support",
-    "reboot persistence or long-duration stability",
+    "long-duration stability",
     "daily-use security suitability",
     "actual satellite positioning",
+    "post-persistence human left-right speaker confirmation",
+    "Play Protect certification or Play Integrity",
     "compatibility with a release newer than API32",
     "a general Huawei unlock method"
   ]
