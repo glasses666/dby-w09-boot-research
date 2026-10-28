@@ -7,23 +7,28 @@
     },
     {
       "path": "PUBLICATION_CHECKLIST.md",
-      "sha256": "3f2e74948b57d79a650049e298d2b2e87f99d8d7b6eef00e79931de3f3c738f3",
-      "size": 1134
+      "sha256": "8616e9dd529792bafd43b104b74822b2d9382136c9989fe2778ec1a7a10ab5d4",
+      "size": 1471
     },
     {
       "path": "README.md",
-      "sha256": "ae1d7759a85f0818c7afe7d61140700b7a3137f3a8a18d5558cab04b9ddbfe57",
-      "size": 3275
+      "sha256": "a3430a7e722ed933b2924b5ce4d58102ac691b8a80b7cdb636dbfc43cd30d888",
+      "size": 3611
     },
     {
       "path": "SOURCE_MAP.md",
-      "sha256": "d4693d3da8b8f7dc14a1120cdcdd44ea3e673126a40a0d678b6da9781488e16e",
-      "size": 3445
+      "sha256": "a99608f32242c72b1edecbfb64cc90e9b77aac6b690c85fbe53d668168b8329c",
+      "size": 3816
     },
     {
       "path": "docs/API29_USABLE_BOOT.md",
       "sha256": "24fddc460feae41aa883753899c5f179508d89b480d1bdf49688cd14a7eb891f",
       "size": 3115
+    },
+    {
+      "path": "docs/API30_NFC_COMPATIBILITY.md",
+      "sha256": "789883ed4f32c0a2315651a1f4313a06d06f15514e7b2b813d7dde954e853334",
+      "size": 3908
     },
     {
       "path": "docs/API32_GNSS_1_1_SUCCESS.md",
@@ -32,8 +37,8 @@
     },
     {
       "path": "docs/BOOT_BOUNDARY.md",
-      "sha256": "f7a76eb964a9608e9ec665cafe78efc4e24f59ac96f4e57949e298c1bc238d38",
-      "size": 1611
+      "sha256": "775da0238d08b7db2febb84d6d72845f17ecace44ea15d5645ca556c18932bbd",
+      "size": 2147
     },
     {
       "path": "docs/METHODOLOGY.md",
@@ -42,8 +47,8 @@
     },
     {
       "path": "docs/RESEARCH_STATUS.md",
-      "sha256": "a50cb4968bf2e7f5b44b8932cc32d8075a71d0089ba64d779e85c1806e333b7f",
-      "size": 5048
+      "sha256": "1a0a2171d8c14c74e536e5ebbbbd812ac1d431317995dc90468a69b9d7a6dad8",
+      "size": 6595
     },
     {
       "path": "docs/SAFETY_AND_SCOPE.md",
@@ -52,13 +57,13 @@
     },
     {
       "path": "docs/TREE.md",
-      "sha256": "e12a185ba121686bf27461af68aa7807d6d994eafba78996287d3e2d78d4a034",
-      "size": 2434
+      "sha256": "d21796e9959a9a9a6564c79c2e22051b332767dece472181362c9d4baeda7616",
+      "size": 2632
     },
     {
       "path": "evidence/public-findings.json",
-      "sha256": "d5ce01840f548b98286e01bef77e31078944cd1ab7aa678b836b59e38db8dfbd",
-      "size": 7336
+      "sha256": "31e1aa563113ffe69acf21ca45c8cd16bb2407b7aa91ac730fcd0620ff525128",
+      "size": 8649
     },
     {
       "path": "private-fixtures/README.md",
@@ -84,6 +89,16 @@
       "path": "scripts/build_api29_fscrypt_adb_fix.py",
       "sha256": "131fa65741fcf154b6e9aaf76d5f9109775eecd1466a65acbfb5e953397239e2",
       "size": 14560
+    },
+    {
+      "path": "scripts/build_api30_init_nfc_legacy_compat.py",
+      "sha256": "35343241a1eef8e260f91887ce04f7d69d616649589f6ef8ae7ebaf168b1e027",
+      "size": 15698
+    },
+    {
+      "path": "scripts/build_api30_nfc_fscrypt_fix.py",
+      "sha256": "4d7b7e4b7efcb7fc60805214c9508a5a3fc88589814ffea620d79a0a05766093",
+      "size": 13909
     },
     {
       "path": "scripts/build_api32_candidate.py",
@@ -191,6 +206,16 @@
       "size": 2414
     },
     {
+      "path": "scripts/verify_api30_init_nfc_legacy_compat.py",
+      "sha256": "5248baa756fafa4c47327250626f131c2b80c692f7d3c66654efae9943de7154",
+      "size": 9747
+    },
+    {
+      "path": "scripts/verify_api30_nfc_fscrypt_fix.py",
+      "sha256": "9cb02243976766830fd11793d06d053d691d22c726a2e243ed5b878a9106faef",
+      "size": 10111
+    },
+    {
       "path": "scripts/verify_api32_system_framework_gnss_1_1_candidate.py",
       "sha256": "f46fa6360df33e073ceaa1f2e79b322fc584b6bb6e8fdea9a92d75a16d50008b",
       "size": 7799
@@ -249,6 +274,16 @@
       "path": "tests/test_build_api29_fscrypt_adb_fix.py",
       "sha256": "e38626fe3aa1e8abe248ca36cee1ae89477d84535f8e0b93f6936a2728cc7ffb",
       "size": 3958
+    },
+    {
+      "path": "tests/test_build_api30_init_nfc_legacy_compat.py",
+      "sha256": "d1a1fd5ac8da195246d7378b0383f8d85e725ed57057babea7c2f70b9cbb984f",
+      "size": 8211
+    },
+    {
+      "path": "tests/test_build_api30_nfc_fscrypt_fix.py",
+      "sha256": "f9b6581f91d190aff6ced413a70a536f3301bfaffee4598bb75ef61e21d74498",
+      "size": 5948
     },
     {
       "path": "tests/test_build_api32_system_framework_gnss_1_1_candidate.py",
@@ -344,5 +379,5 @@
   "hash_algorithm": "sha256",
   "manifest_excluded_from_inventory": true,
   "schema": "dby-w09-public-manifest-v1",
-  "tree_sha256": "d1a3b0f6172e0b33985e441f708a6ef42dcfc5249f54b64751c802bd952d4b3a"
+  "tree_sha256": "30f97194c135c5e279fecd08679e7eec64f3c68e5509730732717a8267185ca4"
 }

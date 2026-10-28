@@ -26,6 +26,10 @@ stability or compatibility with a release newer than API32.
 | API29 context-closed candidate | Recovery recorded `set_policy_failed:/data/adb` | API29 second-stage reached the exact `mkdir /data/adb` post-fs-data action | Android UI had not yet booted |
 | Exact fscrypt repair | One 34-byte action was replaced by a same-length comment; every byte outside that span matched | The candidate changed one proved trigger without changing ext4 metadata | Offline qualification alone was not execution evidence |
 | API29 repaired live attempt | ADB was the first endpoint after 21 seconds; PID 1 was second-stage init; boot completed; Launcher and Settings were usable | The repaired candidate crossed the previous Recovery boundary and produced the first evidence-complete usable custom-ROM UI | Hardware bring-up remains incomplete |
+| API30 clean-data and system-side controls | `set_policy_failed:/data/nfc` remained after clean userdata and removal of the system mkdir | Android 11 init inferred fatal Require for Huawei's legacy plain vendor `/data/nfc` mkdir | This did not yet supply a valid repair |
+| Rejected vendor edit | Vendor payload bytes changed while its AVB footer and authentication metadata remained unchanged | The candidate was structurally invalid and its endpoint was not execution evidence | It must not be reused |
+| API30 v4 offline repair | Five init instruction bytes repurposed the redundant inferred `gsi` exclusion as `nfc`; all other scoped bytes and metadata matched | The repair was system-only, deterministic and vendor-preserving | Offline qualification was not execution evidence |
+| API30 v4 live attempt | Complete pre/post readbacks passed; Android 11 boot completed with encrypted data, Enforcing, Launcher/Settings and retained UID 0 | The NFC compatibility patch crossed the Recovery boundary and produced an accepted API30 core system | Reboot persistence and the remaining hardware matrix were still pending at that stage |
 | Exact-target API32 VINTF replay | Target `libvintf` rejected the duplicate same-major GNSS input and accepted the source-derived 1.1-only correction | Host compatibility was insufficient; the target aggregation rule selected the minimal framework change | This was still offline evidence |
 | API32 GNSS 1.1-only live attempt | Complete prewrite/write/readback gates passed; boot completed; Launcher was visible; keystore2/system_suspend remained stable; GNSS 1.0/1.1/2.0 and an enabled GPS provider were visible | The corrected framework declaration crossed both the prior service-abort family and GNSS registration boundary while preserving boot/vendor | Satellite fix, persistence and the broader hardware matrix remain open |
 
@@ -42,6 +46,9 @@ stability or compatibility with a release newer than API32.
 | Later private checkpoints | Could the original init path be advanced safely enough to choose a better baseline? | Yes; evidence retained privately |
 | API29 baseline | Would a context-closed Android 10/VNDK29 system reach second-stage? | Yes; one `/data/adb` fscrypt action caused Recovery |
 | API29 repair | Does removing only that exact action cross the boundary? | Yes; stable AOSP Launcher and Settings |
+| API30 clean-data controls | Is stale userdata the only reason API30 fails at `/data/nfc`? | No; Android 11 init also infers Require for the vendor plain mkdir |
+| API30 vendor edit | Can vendor rc be patched in place while preserving its AVB footer? | No; the experiment is invalidated |
+| API30 v4 | Can a vendor-preserving init-only exception cross the NFC boundary? | Yes; Android 11 core system accepted |
 | API32 diagnostic baseline | Can Android 12 reach second-stage with early ADB and expose the first framework blocker? | Yes; the blocker localized to GNSS VINTF inheritance |
 | API32 target replay | Does target aggregation accept the original two-version framework patch? | No; a 1.1-only source-derived correction restores aggregation |
 | API32 corrected live | Does the corrected candidate preserve core services and reach a usable UI? | Yes; boot-complete Launcher, stable core services and GNSS registration |
