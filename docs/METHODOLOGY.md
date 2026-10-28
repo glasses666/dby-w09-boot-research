@@ -38,8 +38,20 @@ only after either the frozen baseline is restored and every scoped partition is
 read back, or a predeclared usable-system threshold is met and the owner
 explicitly retains the verified candidate. Failed probes follow the rollback
 path. The first usable API29 UI followed the retention path so later hardware
-tests would not consume another flash cycle. A transport retry begins from
-offset zero; a failed read is not converted into a second write.
+tests would not consume another flash cycle. The accepted API32 experiment used
+the same rule: it retained the candidate only after complete postwrite
+readback, boot completion, visible UI, stable core services and GNSS
+registration. A transport retry begins from offset zero; a failed read is not
+converted into a second write.
+
+## Replay the target semantics
+
+Host-side compatibility tools can disagree with the exact target libraries.
+The API32 GNSS correction therefore replayed the target `libvintf` binary and
+its dependency closure against a control, rejected candidate and
+source-derived correction. The live candidate was built only after the target
+replay and two independent image builds agreed. This pattern is now preferred
+for every compatibility component whose host and target behavior can diverge.
 
 ## Reproducibility layers
 

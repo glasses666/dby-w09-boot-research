@@ -1,96 +1,123 @@
 {
-  "schema": "dby-w09-public-findings-v1",
-  "as_of": "2026-10-25",
-  "scope": {
-    "authorization": "owner-operated single-device research",
-    "public_artifacts": "source-and-sanitized-findings-only",
-    "firmware_or_partition_images_included": false,
-    "live_write_automation_included": false
-  },
-  "findings": [
-    {
-      "id": "PF-001",
-      "stage": "W1",
-      "result": "pass",
-      "finding": "A fresh normal-kernel execution reached a nonce-bound PID 1 witness and exported current-kernel evidence.",
-      "limit": "This did not establish stock first-stage or Lineage init execution.",
-      "private_result_sha256": "1e9c2fc1eb9698970c212dd87a6a77fed0a2bc591284703819df0e88f9b3431c"
+    "schema": "dby-w09-public-findings-v1",
+    "as_of": "2026-10-28",
+    "scope": {
+        "authorization": "owner-operated single-device research",
+        "public_artifacts": "source-and-sanitized-findings-only",
+        "firmware_or_partition_images_included": false,
+        "live_write_automation_included": false
     },
-    {
-      "id": "PF-002",
-      "stage": "W6",
-      "result": "pass",
-      "finding": "Stock first-stage mounted the required logical filesystems, completed switch_root and exposed the selected Lineage init in PID 1's new root.",
-      "limit": "Lineage init execution was not established.",
-      "private_result_sha256": "65e0716e57b4c0cde090dfddf21dac801a39b3618536499b289c9723718465f9"
-    },
-    {
-      "id": "PF-003",
-      "stage": "W7",
-      "result": "recovery",
-      "finding": "The success endpoint was not observed; fresh ABL-associated evidence classified the preceding reset as AP_S_PANIC.",
-      "limit": "A successful exec followed by panic before observation remained possible.",
-      "private_result_sha256": "b26aa2fbf669720074999070cba21a6999961e3f331097d0543db4d058ed2b57"
-    },
-    {
-      "id": "PF-004",
-      "stage": "W8",
-      "result": "pass",
-      "finding": "The real kernel exec path, bootstrap linker and transfer to the patched Lineage executable entrypoint completed.",
-      "limit": "The original entry shim was intentionally bypassed.",
-      "candidate_super_sha256": "389ca5eb980c5b55be034ca54289429116b4582fb2f8a78ece8fbcfa878056f9",
-      "private_result_sha256": "1896754957a309276e0c55f77e9c26de3bbcdde84cd5661892ad3da29761bb6a"
-    },
-    {
-      "id": "PF-005",
-      "stage": "W9",
-      "result": "pass",
-      "finding": "The original entry shim called __libc_init and startup transferred through the relocated main pointer to patched main.",
-      "limit": "The original Lineage main body and Android framework were not established by this probe.",
-      "patched_init_sha256": "63709fc39a4a4a621953995ad00228be154a25e5762b1be50abe2b981a2f86f4",
-      "candidate_super_sha256": "a947971a04126e9cf2e98f7574df5822af2d24873ea24cc5950f6e04eeae7461",
-      "private_result_sha256": "5b87465b31577551407af9b9629019b90ddd77b94e0b422d9031b55cda418b01"
-    },
-    {
-      "id": "PF-006",
-      "stage": "W9-rollback",
-      "result": "pass",
-      "finding": "The frozen baseline was restored and six scoped partitions matched source bytes and expected SHA-256 values.",
-      "limit": "This did not claim that the restored baseline OS booted.",
-      "private_result_sha256": "b8e075d469a65e95fce42dcbfd5406bb10ab0bb4250ac2ba1c6d339e4b650885"
-    },
-    {
-      "id": "PF-007",
-      "stage": "API29-first-live",
-      "result": "recovery-localized",
-      "finding": "The context-closed API29 candidate reached second-stage post-fs-data and failed while applying the directory encryption policy for /data/adb.",
-      "limit": "Framework and UI execution were not established in this attempt."
-    },
-    {
-      "id": "PF-008",
-      "stage": "API29-fscrypt-repair",
-      "result": "offline-pass",
-      "finding": "One 34-byte mkdir action was replaced by a same-length comment, with every byte outside the patch span and ext4 metadata unchanged.",
-      "limit": "Offline qualification was not treated as execution evidence.",
-      "system_sha256": "a5c6c8b481ab494ec7aac0751063c1012ba73a2e16ca611fe3d7bbe823a4515f",
-      "super_sha256": "55b043413e9865ed55cb7e6eb1ff152f98ab8ddb9343df0bec1d10e5d7383281"
-    },
-    {
-      "id": "PF-009",
-      "stage": "API29-repaired-live",
-      "result": "usable-ui-pass",
-      "finding": "ADB was the first endpoint 21 seconds after one normal reset; second-stage init, boot-complete properties, Launcher3 and Settings were verified.",
-      "limit": "Camera remained unavailable and the remaining hardware and persistence matrix was not completed.",
-      "super_sha256": "55b043413e9865ed55cb7e6eb1ff152f98ab8ddb9343df0bec1d10e5d7383281",
-      "boot_sha256": "2fe0e69809aa47ff32e11b4735a4295ce36025e497f38878451390dc50d58fb4"
-    }
-  ],
-  "current_boundary": "usable API29 Android framework and launcher; hardware bring-up remains incomplete",
-  "not_claimed": [
-    "complete hardware support",
-    "reboot persistence or long-duration stability",
-    "daily-use security suitability",
-    "compatibility with a newer Android release",
-    "a general Huawei unlock method"
-  ]
+    "findings": [
+        {
+            "id": "PF-001",
+            "stage": "W1",
+            "result": "pass",
+            "finding": "A fresh normal-kernel execution reached a nonce-bound PID 1 witness and exported current-kernel evidence.",
+            "limit": "This did not establish stock first-stage or Lineage init execution.",
+            "private_result_sha256": "1e9c2fc1eb9698970c212dd87a6a77fed0a2bc591284703819df0e88f9b3431c"
+        },
+        {
+            "id": "PF-002",
+            "stage": "W6",
+            "result": "pass",
+            "finding": "Stock first-stage mounted the required logical filesystems, completed switch_root and exposed the selected Lineage init in PID 1's new root.",
+            "limit": "Lineage init execution was not established.",
+            "private_result_sha256": "65e0716e57b4c0cde090dfddf21dac801a39b3618536499b289c9723718465f9"
+        },
+        {
+            "id": "PF-003",
+            "stage": "W7",
+            "result": "recovery",
+            "finding": "The success endpoint was not observed; fresh ABL-associated evidence classified the preceding reset as AP_S_PANIC.",
+            "limit": "A successful exec followed by panic before observation remained possible.",
+            "private_result_sha256": "b26aa2fbf669720074999070cba21a6999961e3f331097d0543db4d058ed2b57"
+        },
+        {
+            "id": "PF-004",
+            "stage": "W8",
+            "result": "pass",
+            "finding": "The real kernel exec path, bootstrap linker and transfer to the patched Lineage executable entrypoint completed.",
+            "limit": "The original entry shim was intentionally bypassed.",
+            "candidate_super_sha256": "389ca5eb980c5b55be034ca54289429116b4582fb2f8a78ece8fbcfa878056f9",
+            "private_result_sha256": "1896754957a309276e0c55f77e9c26de3bbcdde84cd5661892ad3da29761bb6a"
+        },
+        {
+            "id": "PF-005",
+            "stage": "W9",
+            "result": "pass",
+            "finding": "The original entry shim called __libc_init and startup transferred through the relocated main pointer to patched main.",
+            "limit": "The original Lineage main body and Android framework were not established by this probe.",
+            "patched_init_sha256": "63709fc39a4a4a621953995ad00228be154a25e5762b1be50abe2b981a2f86f4",
+            "candidate_super_sha256": "a947971a04126e9cf2e98f7574df5822af2d24873ea24cc5950f6e04eeae7461",
+            "private_result_sha256": "5b87465b31577551407af9b9629019b90ddd77b94e0b422d9031b55cda418b01"
+        },
+        {
+            "id": "PF-006",
+            "stage": "W9-rollback",
+            "result": "pass",
+            "finding": "The frozen baseline was restored and six scoped partitions matched source bytes and expected SHA-256 values.",
+            "limit": "This did not claim that the restored baseline OS booted.",
+            "private_result_sha256": "b8e075d469a65e95fce42dcbfd5406bb10ab0bb4250ac2ba1c6d339e4b650885"
+        },
+        {
+            "id": "PF-007",
+            "stage": "API29-first-live",
+            "result": "recovery-localized",
+            "finding": "The context-closed API29 candidate reached second-stage post-fs-data and failed while applying the directory encryption policy for /data/adb.",
+            "limit": "Framework and UI execution were not established in this attempt."
+        },
+        {
+            "id": "PF-008",
+            "stage": "API29-fscrypt-repair",
+            "result": "offline-pass",
+            "finding": "One 34-byte mkdir action was replaced by a same-length comment, with every byte outside the patch span and ext4 metadata unchanged.",
+            "limit": "Offline qualification was not treated as execution evidence.",
+            "system_sha256": "a5c6c8b481ab494ec7aac0751063c1012ba73a2e16ca611fe3d7bbe823a4515f",
+            "super_sha256": "55b043413e9865ed55cb7e6eb1ff152f98ab8ddb9343df0bec1d10e5d7383281"
+        },
+        {
+            "id": "PF-009",
+            "stage": "API29-repaired-live",
+            "result": "usable-ui-pass",
+            "finding": "ADB was the first endpoint 21 seconds after one normal reset; second-stage init, boot-complete properties, Launcher3 and Settings were verified.",
+            "limit": "Camera remained unavailable and the remaining hardware and persistence matrix was not completed.",
+            "super_sha256": "55b043413e9865ed55cb7e6eb1ff152f98ab8ddb9343df0bec1d10e5d7383281",
+            "boot_sha256": "2fe0e69809aa47ff32e11b4735a4295ce36025e497f38878451390dc50d58fb4"
+        },
+        {
+            "id": "PF-010",
+            "stage": "API32-target-vintf-replay",
+            "result": "source-derived-correction-pass",
+            "finding": "The exact target API32 VINTF implementation rejected the duplicate same-major GNSS input and accepted a source-derived 1.1-only declaration while preserving the inherited 1.0 view.",
+            "limit": "Target replay and host qualification were offline evidence, not Android execution evidence."
+        },
+        {
+            "id": "PF-011",
+            "stage": "API32-GNSS-1.1-offline",
+            "result": "deterministic-whole-image-pass",
+            "finding": "Two independent builds produced byte-identical system and super images; the only system payload change remained inside the existing framework manifest span.",
+            "limit": "The candidate was not considered accepted until complete live readback and runtime gates passed.",
+            "system_sha256": "e254e96f018ae0b8a5db47e3ab891dc9e07db4202737e22c8835c00f1475d317",
+            "super_sha256": "a2826268ea5566d25ca963ec371f4cd721e25d6d4175b08662b6bbe66d5030a1",
+            "framework_manifest_sha256": "e1709cc931677e71ac3c51257ac9e207060f95f3449b28ec5f676f992640df07"
+        },
+        {
+            "id": "PF-012",
+            "stage": "API32-GNSS-1.1-live",
+            "result": "core-runtime-ui-pass",
+            "finding": "After complete prewrite and postwrite gates and one normal reset, Android 12 reached second-stage init, boot completion and a visible Launcher with vendor-verity, stable keystore2/system_suspend, SurfaceFlinger, system_server and GNSS registration.",
+            "limit": "Actual satellite fix, reboot persistence and the broader hardware matrix remain unproved.",
+            "super_sha256": "a2826268ea5566d25ca963ec371f4cd721e25d6d4175b08662b6bbe66d5030a1",
+            "framework_manifest_sha256": "e1709cc931677e71ac3c51257ac9e207060f95f3449b28ec5f676f992640df07"
+        }
+    ],
+    "current_boundary": "boot-complete API32 Android framework, Launcher and GNSS registration; persistence, satellite fix and hardware bring-up remain incomplete",
+    "not_claimed": [
+        "complete hardware support",
+        "reboot persistence or long-duration stability",
+        "daily-use security suitability",
+        "actual satellite positioning",
+        "compatibility with a release newer than API32",
+        "a general Huawei unlock method"
+    ]
 }

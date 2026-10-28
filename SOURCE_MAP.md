@@ -12,13 +12,16 @@ and previously removed objects cannot leak through ancestry.
 | `scripts/build_*boot*.py` | matching private scripts | Offline Android boot and AVB transformations |
 | `scripts/build_context_closed_super.py` | same repository-relative path | Fail-closed logical-partition payload replacement |
 | `scripts/build_api29_fscrypt_adb_fix.py` | same repository-relative path | Exact one-span API29 repair and hash contract |
+| `scripts/build_api32_*gnss_1_1*.py` and matching verifier/qualifier | same repository-relative paths | Deterministic API32 framework-manifest correction and whole-image qualification |
+| `scripts/build_api32_vintf_target_replay.py`, `scripts/audit_api32_vintf_target_replay.py` | same repository-relative paths | Rebuild and audit the exact-target VINTF replay harness without distributing target binaries |
+| `scripts/stream_readback_compare.py` | same repository-relative path | Complete streamed comparison without retaining a second partition-sized image |
 | `scripts/build_diagnostic_normal_ramdisk.py` | same repository-relative path | Shared ramdisk parser and builder |
 | `scripts/build_w*.py` | selected private staged builders | W1/W2/W6/W7/W8/W9 candidate construction |
 | `scripts/w*.c`, `scripts/w*.S` | matching private probe sources | Minimal witnesses and endpoint probes |
 | `scripts/parse_w*.py` | matching private parsers | Strict nonce, checksum and record interpretation |
 | `scripts/verify_w1_live_gate.py` | same repository-relative path | Read-only manifest-bound verification |
 | `tests/` | selected private tests | Synthetic checks and explicit private-fixture skips |
-| `docs/`, `evidence/` | synthesized from hash-bound private reports | Sanitized findings and interpretation limits |
+| `docs/`, `evidence/` | synthesized from hash-bound private reports | Sanitized API29/API32 findings and interpretation limits |
 
 Public tests replace researcher-specific paths with explicit fixtures or test
 synthetic helper functions. Production hashes remain where they are part of a

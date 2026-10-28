@@ -8,6 +8,7 @@ dby-w09-boot-research/
 ├── PUBLICATION_CHECKLIST.md     completed publication gates
 ├── docs/
 │   ├── API29_USABLE_BOOT.md     first usable Android UI milestone
+│   ├── API32_GNSS_1_1_SUCCESS.md accepted Android 12/GNSS milestone
 │   ├── RESEARCH_STATUS.md       evidence, limits and next questions
 │   ├── BOOT_BOUNDARY.md         proven control-flow boundary
 │   ├── METHODOLOGY.md           evidence and rollback discipline
@@ -22,12 +23,18 @@ dby-w09-boot-research/
 │   ├── build_*boot*.py          boot and AVB offline builders
 │   ├── build_context_closed_super.py
 │   ├── build_api29_fscrypt_adb_fix.py
+│   ├── build_api32_*             target VINTF replay and GNSS 1.1 candidate
+│   ├── audit_api32_*             exact-target replay audit
+│   ├── qualify_api32_*           paired-build and replay qualification
 │   ├── build_diagnostic_normal_ramdisk.py
+│   ├── stream_readback_compare.py complete FIFO readback comparison
 │   ├── build_w*.py              staged probe builders
 │   ├── w*.c / w*.S              minimal stage witnesses
 │   ├── parse_w*.py              strict witness parsers
 │   └── verify_w1_live_gate.py   read-only manifest gate
-├── tests/                       synthetic and fixture-aware tests
+├── tests/
+│   ├── fixtures/               sanitized source XML used by semantic tests
+│   └── test_*.py               synthetic and fixture-aware tests
 └── tools/
     └── validate_public_tree.py  redaction, link and manifest gate
 ```

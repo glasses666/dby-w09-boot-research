@@ -12,18 +12,23 @@
     },
     {
       "path": "README.md",
-      "sha256": "3ebe9b9b68865aa97366b90132847865aca665758a285cf62754d26ebf9c53c5",
-      "size": 2833
+      "sha256": "ae1d7759a85f0818c7afe7d61140700b7a3137f3a8a18d5558cab04b9ddbfe57",
+      "size": 3275
     },
     {
       "path": "SOURCE_MAP.md",
-      "sha256": "407cd431ee00f05a4e37949f3c77ef5bbd4f2f2d4acdd2cdbc5820d5d1c42f80",
-      "size": 2870
+      "sha256": "d4693d3da8b8f7dc14a1120cdcdd44ea3e673126a40a0d678b6da9781488e16e",
+      "size": 3445
     },
     {
       "path": "docs/API29_USABLE_BOOT.md",
       "sha256": "24fddc460feae41aa883753899c5f179508d89b480d1bdf49688cd14a7eb891f",
       "size": 3115
+    },
+    {
+      "path": "docs/API32_GNSS_1_1_SUCCESS.md",
+      "sha256": "9f115e0615a5512943d683cec76ce318ba767f0d0687e0c205cb5c08db8b1d6c",
+      "size": 3288
     },
     {
       "path": "docs/BOOT_BOUNDARY.md",
@@ -32,13 +37,13 @@
     },
     {
       "path": "docs/METHODOLOGY.md",
-      "sha256": "fbd64939500ea9aba60e94194445609ca1db0bccdf8fe871127895844a69aae2",
-      "size": 2359
+      "sha256": "94c6f43c640c4db4bc57d7ef3a19ec1a4b5b8b36fcfec57ae38bda5eed3ca59d",
+      "size": 3034
     },
     {
       "path": "docs/RESEARCH_STATUS.md",
-      "sha256": "0a20aac69e6de23854df0445bb9d178a814bb5da870dcc22fe983d8afbfaf42e",
-      "size": 3741
+      "sha256": "a50cb4968bf2e7f5b44b8932cc32d8075a71d0089ba64d779e85c1806e333b7f",
+      "size": 5048
     },
     {
       "path": "docs/SAFETY_AND_SCOPE.md",
@@ -47,18 +52,23 @@
     },
     {
       "path": "docs/TREE.md",
-      "sha256": "3ecf2b713b3483f47b56d2e3802b3503032f4576b316578002be23e9c234dfa2",
-      "size": 1945
+      "sha256": "e12a185ba121686bf27461af68aa7807d6d994eafba78996287d3e2d78d4a034",
+      "size": 2434
     },
     {
       "path": "evidence/public-findings.json",
-      "sha256": "53b3d1a9a6987497c3c693046393cc069d6799971d6663482ca55f7912a50a62",
-      "size": 4797
+      "sha256": "d5ce01840f548b98286e01bef77e31078944cd1ab7aa678b836b59e38db8dfbd",
+      "size": 7336
     },
     {
       "path": "private-fixtures/README.md",
       "sha256": "1d6b01a2a929d00d598ef2469ab4f77b3afa1984602fe5d03993e84b1b926a3a",
       "size": 758
+    },
+    {
+      "path": "scripts/audit_api32_vintf_target_replay.py",
+      "sha256": "4e8e84047c3dc74aaaaea02ea9d4361a5c58bde3ef05ea0ce480df54527e09e7",
+      "size": 15943
     },
     {
       "path": "scripts/audit_rrecord_freshness.py",
@@ -74,6 +84,26 @@
       "path": "scripts/build_api29_fscrypt_adb_fix.py",
       "sha256": "131fa65741fcf154b6e9aaf76d5f9109775eecd1466a65acbfb5e953397239e2",
       "size": 14560
+    },
+    {
+      "path": "scripts/build_api32_candidate.py",
+      "sha256": "d61173a8c18b5f8aa27bb0c2da928c41b3da7fdaacf62bbe7ec19e92eb1a725f",
+      "size": 34035
+    },
+    {
+      "path": "scripts/build_api32_system_framework_gnss_1_1_candidate.py",
+      "sha256": "6f542e36f668c8195b550618afb6e18792b9821d31b10860ec455de177a9f7f7",
+      "size": 10910
+    },
+    {
+      "path": "scripts/build_api32_system_framework_gnss_candidate.py",
+      "sha256": "34d6d4e85a3c6345801458edff50eb4b72477c7629cd8b8ec9605957ea6f65a5",
+      "size": 17497
+    },
+    {
+      "path": "scripts/build_api32_vintf_target_replay.py",
+      "sha256": "8884031759ea8248fd7448ec32f32b446efc6b9ec3c366126ea3c859c6b05e0b",
+      "size": 34023
     },
     {
       "path": "scripts/build_boot_system_noavb.py",
@@ -146,6 +176,31 @@
       "size": 4286
     },
     {
+      "path": "scripts/qualify_api32_system_framework_gnss_1_1_candidate.py",
+      "sha256": "0bf160a3f542c80471900152724f06813605f87e1ee205c6d931df38904d55ea",
+      "size": 6828
+    },
+    {
+      "path": "scripts/run_api32_vintf_target_replay_windows.ps1",
+      "sha256": "fda04d44a8bd9ab1f56a4bc9255b7da14d7ce325343fb4490d2fcea21bcce8ac",
+      "size": 8264
+    },
+    {
+      "path": "scripts/stream_readback_compare.py",
+      "sha256": "1f4c0c0d475a11969e45672f18b587dced675269d891a3f6b9cdba1c385aa61e",
+      "size": 2414
+    },
+    {
+      "path": "scripts/verify_api32_system_framework_gnss_1_1_candidate.py",
+      "sha256": "f46fa6360df33e073ceaa1f2e79b322fc584b6bb6e8fdea9a92d75a16d50008b",
+      "size": 7799
+    },
+    {
+      "path": "scripts/verify_api32_system_framework_gnss_candidate.py",
+      "sha256": "7ab30979d6b7c67d5748e2853d338f7e77c7cbd8e76a3396005e999a386ad752",
+      "size": 13706
+    },
+    {
       "path": "scripts/verify_w1_live_gate.py",
       "sha256": "df461773755b7a75848a4fc1ecddd1894472d7ef45f0390e950a25c8499515f1",
       "size": 4857
@@ -176,6 +231,16 @@
       "size": 883
     },
     {
+      "path": "tests/fixtures/api32-framework-manifest-source.xml",
+      "sha256": "e5fb162ac9b27f130f8a7a09c1a908a6727cc00ea32b20036a0d7253e45ed040",
+      "size": 3034
+    },
+    {
+      "path": "tests/test_audit_api32_vintf_target_replay.py",
+      "sha256": "31a5d8c525fddfe9e2eacfcbe05e2c8b4da1b757c3496ef31e609f3f1d4ff968",
+      "size": 9851
+    },
+    {
       "path": "tests/test_audit_rrecord_full.py",
       "sha256": "c5895fccf1f8b9281ddd09206091cfafeb8ab45c639b0ecbf2cddc1b9dccfb94",
       "size": 5172
@@ -184,6 +249,16 @@
       "path": "tests/test_build_api29_fscrypt_adb_fix.py",
       "sha256": "e38626fe3aa1e8abe248ca36cee1ae89477d84535f8e0b93f6936a2728cc7ffb",
       "size": 3958
+    },
+    {
+      "path": "tests/test_build_api32_system_framework_gnss_1_1_candidate.py",
+      "sha256": "c16b74f0f5774b23b573d57daa41901169dba47b83551c643cc6924e92e4d4fd",
+      "size": 3976
+    },
+    {
+      "path": "tests/test_build_api32_vintf_target_replay.py",
+      "sha256": "9fa2a40179596f61ae55a2aa190bb13bfeae0a386a16c3aa11e47a753161f092",
+      "size": 11476
     },
     {
       "path": "tests/test_build_boot_system_noavb.py",
@@ -241,6 +316,21 @@
       "size": 8397
     },
     {
+      "path": "tests/test_qualify_api32_system_framework_gnss_1_1_candidate.py",
+      "sha256": "8cffd15c5199817765cde003f91dfa498bd1fadcff7401142870d46df371daa4",
+      "size": 4013
+    },
+    {
+      "path": "tests/test_stream_readback_compare.py",
+      "sha256": "4457b051ecab9a212186a8d4959165443671808135f4b400f7c2596e1b2ca734",
+      "size": 2003
+    },
+    {
+      "path": "tests/test_verify_api32_system_framework_gnss_1_1_candidate.py",
+      "sha256": "d2e1a1b6eb2f462f3db486238117e8c37d05a874034d9218a165d24f149c91a2",
+      "size": 2485
+    },
+    {
       "path": "tests/test_verify_w1_live_gate.py",
       "sha256": "bbff9d39fd30831696715831fc038b58fdb576d5d26d5181919b0393e0cc69f1",
       "size": 3819
@@ -254,5 +344,5 @@
   "hash_algorithm": "sha256",
   "manifest_excluded_from_inventory": true,
   "schema": "dby-w09-public-manifest-v1",
-  "tree_sha256": "914c99acd25f963537e4431c8aaf95518debf1aa96f1a89a45bab9000e2a3163"
+  "tree_sha256": "d1a3b0f6172e0b33985e441f708a6ef42dcfc5249f54b64751c802bd952d4b3a"
 }
