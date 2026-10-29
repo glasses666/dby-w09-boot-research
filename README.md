@@ -1,7 +1,37 @@
-# DBY-W09 boot research
+# Huawei MatePad 11 → Android 12L
+
+![DBY-W09 Android 12L research milestone](assets/milestone-card.svg)
+
+**Android 10 → 11 → 12L on the Huawei MatePad 11 (2021, DBY-W09, Snapdragon 865).**
+Original compatibility research, offline builders and evidence by
+**Queen_Glasser ([glasses666](https://github.com/glasses666))**.
+
+华为 MatePad 11 已运行 Android 12L / API32。显示、触控、相机、Wi-Fi、扬声器、
+Google 服务和 USB YubiKey 登录均有实机证据。这里保存从启动故障到可用系统的研究与最小修复。
+
+[Latest release](https://github.com/glasses666/dby-w09-boot-research/releases/latest) ·
+[Build & recovery](docs/BUILD_AND_RECOVERY.md) · [Hardware status](docs/API32_DAILY_BRINGUP.md) ·
+[Cite this work](CITATION.cff) · [Research history](docs/PROVENANCE.md)
+
+| Surface | Verified on the research device |
+|---|---|
+| Android | 12L / API32; boot complete, Launcher3 and Settings; repeated cold boots |
+| Security / root | SELinux Enforcing, vendor verity and existing APatch root retained |
+| Display / touch / GPU | 1600×2560, 60/120 Hz; Adreno EGL/Vulkan |
+| Connectivity | Validated Wi-Fi and Bluetooth discovery; pairing untested |
+| Camera / sensors | Preview, decoded 4000×3000 JPEG and live sensor events |
+| Audio | Audible mono/stereo, persistent speaker repair and nonzero microphone samples |
+| Google services | Systemless GSF/GMS/Play Store; real account addition |
+| Hardware passkeys | Chrome → GMS → USB YubiKey → CTAP2 assertion → successful ChatGPT login |
+| GNSS | HAL/provider registration; satellite fix untested |
+
+USB-free suspend/resume, torch, pairing, long-duration stability and Play/streaming certification
+remain open. [The detailed matrix](docs/API32_DAILY_BRINGUP.md) separates each acceptance level.
+
+## Research milestones
 
 This repository is a sanitized, source-only research snapshot for an
-owner-operated Huawei MatePad 11 DBY-W09. It records five connected results:
+owner-operated Huawei MatePad 11 DBY-W09. It records six connected results:
 
 1. staged probes narrowed the original LineageOS 21 failure from the general
    boot chain through the original init entry shim and into `main`;
@@ -14,7 +44,9 @@ owner-operated Huawei MatePad 11 DBY-W09. It records five connected results:
    boot-complete Launcher with the original boot and vendor chain retained;
 5. reversible API32 bring-up then validated most hardware surfaces, localized
    and persistently repaired speaker playback, and added optional systemless
-   Google services and a local two-path VPN without another partition write.
+   Google services and a local two-path VPN without another partition write;
+6. a single GMS runtime permission restored Chrome's FIDO2 UI, USB YubiKey
+   assertion and user-confirmed ChatGPT login. See [the passkey report](docs/API32_PASSKEY_AND_TERMUX.md).
 
 截至 2026-10-29，当前保留在设备上的系统为 Android 12/API32。PID 1 为
 `/system/bin/init second_stage`，两个 boot-complete 属性均已建立，bootanimation
@@ -41,6 +73,13 @@ Wi-Fi、蓝牙扫描、相机、DRM 能力和非零麦克风采样已通过有�
 - `evidence/public-findings.json`: sanitized, machine-readable findings;
 - `SOURCE_MAP.md`: private-to-public mapping and exclusions;
 - `tools/validate_public_tree.py`: redaction, link and manifest checks.
+
+The [release downloads](https://github.com/glasses666/dby-w09-boot-research/releases/latest)
+package this reviewed source and the speaker-module builder with SHA-256 checksums.
+The archives are research kits; they are not recovery-flashable ROM ZIPs.
+The tested complete `super` contains Huawei vendor/ODM firmware, and the rooted `boot`
+is installation-specific. Follow [build and recovery](docs/BUILD_AND_RECOVERY.md) for
+local input requirements and current reconstruction limits.
 
 The repository does **not** contain vendor firmware, partition images,
 Firehose programmers, device or USB identifiers, raw device logs, screenshots,
@@ -78,3 +117,10 @@ Public repository: <https://github.com/glasses666/dby-w09-boot-research>
 Public attribution: **Queen_Glasser (@glasses666)**. No license has been
 granted; unless and until a license is added, all rights are reserved. No
 firmware or prebuilt flashable artifact is released from this repository.
+
+Use [CITATION.cff](CITATION.cff), retain the author and original URL, and identify the
+release/commit when discussing these findings. [Provenance](docs/PROVENANCE.md) links the
+published milestones. REA, Ghidra and Codex assisted the investigation; upstream and
+tool credits are in [AUTHORS.md](AUTHORS.md). No global first-discovery claim is made.
+See [COPYRIGHT.md](COPYRIGHT.md) for the existing rights reservation and
+[CONTRIBUTING.md](CONTRIBUTING.md) for submitting reproducible findings.

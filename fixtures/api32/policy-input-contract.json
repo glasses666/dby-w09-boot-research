@@ -1,0 +1,26 @@
+{
+  "schema": "dby-api32-local-policy-inputs-v1",
+  "vendor_public": {
+    "path_in_owner_vendor": "etc/selinux/plat_pub_versioned.cil",
+    "size": 792290,
+    "sha256": "5f808b66e0ed55b956e17b9b8139c2e64e683feb019c4416eaf27b1bc698dda3"
+  },
+  "gsi_mapping": {
+    "source_archive": "aosp_arm64-exp-QJR1.191112.001-6004257.zip",
+    "source_url": "https://dl.google.com/developers/android/qt/images/gsi/aosp_arm64-exp-QJR1.191112.001-6004257.zip",
+    "path_in_system_image": "/system/etc/selinux/mapping/29.0.cil",
+    "size": 146917,
+    "sha256": "388bacad08afe5bc5da600937f4ef020c4ada437ae6c6eba8d8f760489a77094"
+  },
+  "mapping_output": {
+    "name": "huawei-29.0.missing-mapping.cil",
+    "bindings": 119,
+    "size": 7495,
+    "sha256": "54e7c7dea7db54beec9aad440c656dc782c634a2e1c0b8955c46a49e1ebf7c59"
+  },
+  "xattr_output": {
+    "name": "sepolicy_file.plat.attr",
+    "size": 28,
+    "sha256": "0a15066502d71be3485a0ee0f0a70499c0018efa416bd1058a7cc5b530281530"
+  }
+}

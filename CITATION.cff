@@ -1,0 +1,26 @@
+cff-version: 1.2.0
+message: "Please cite the original research and the exact release or commit you use."
+title: "Huawei MatePad 11 DBY-W09: Android 10-12L Boot and Compatibility Research"
+type: software
+authors:
+  - family-names: "Queen_Glasser"
+    alias: "glasses666"
+    website: "https://github.com/glasses666"
+version: "2026.10.29"
+date-released: 2026-10-29
+url: "https://github.com/glasses666/dby-w09-boot-research"
+repository-code: "https://github.com/glasses666/dby-w09-boot-research"
+abstract: >-
+  Evidence-backed Android 10, Android 11 and Android 12L bring-up on an
+  owner-operated Huawei MatePad 11 DBY-W09. Includes offline compatibility
+  builders, staged boot witnesses, VINTF/GNSS analysis, speaker repair and
+  browser FIDO2 authentication findings. Proprietary firmware and personal
+  device data are excluded.
+keywords:
+  - Huawei MatePad 11
+  - DBY-W09
+  - Snapdragon 865
+  - Android 12L
+  - GSI
+  - VINTF
+  - FIDO2

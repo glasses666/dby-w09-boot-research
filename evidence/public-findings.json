@@ -180,9 +180,23 @@
       "result": "two-path-pass",
       "finding": "A removable Android VPN profile exposed two selectable private paths; both returned HTTPS 204 through the tablet core with distinct public egress identities.",
       "limit": "The client package, private profile, server addresses, credentials and infrastructure details are excluded from this repository."
+    },
+    {
+      "id": "PF-022",
+      "stage": "API32-browser-FIDO2",
+      "result": "user-confirmed-login-pass",
+      "finding": "A fresh Chrome request reached GMS FIDO2 privileged API149 but failed the API32 STORAGE permission precheck. Granting GMS only READ_EXTERNAL_STORAGE restored the authentication UI, USB YubiKey CTAP2 assertion and owner-confirmed ChatGPT login.",
+      "limit": "This finding is bound to the installed API32/GMS combination; no credential identifiers, assertions, PIN, account material or raw capture is published."
+    },
+    {
+      "id": "PF-023",
+      "stage": "API32-Termux-root-launcher",
+      "result": "uid-harness-pass-terminal-acceptance-pending",
+      "finding": "Termux already had APatch authorization, but its su wrapper required a filesystem su inode that this kernel-intercepted environment lacked. An app-local wrapper invoking the existing /system/bin/kp entrypoint returned UID 0 in a UID-level harness.",
+      "limit": "The harness inherited a privileged SELinux domain. Real Termux app-domain and foreground-terminal acceptance remain unproved; no system or root-policy change is claimed."
     }
   ],
-  "current_boundary": "reboot-persistent API32 with most hardware surfaces, systemless speaker compatibility, Google account addition and two-path local VPN accepted; satellite fix, USB-free suspend, torch, pairing and long-duration stability remain open",
+  "current_boundary": "reboot-persistent API32 with most hardware surfaces, systemless speaker compatibility, Google account addition, two-path local VPN and browser USB security-key login accepted; satellite fix, USB-free suspend, torch, pairing and long-duration stability remain open",
   "not_claimed": [
     "complete hardware support",
     "long-duration stability",

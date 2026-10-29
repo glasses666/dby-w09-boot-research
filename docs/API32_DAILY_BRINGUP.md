@@ -22,6 +22,7 @@ long-duration stability and any system newer than API32 remain open.
 | Hash-gated boot-time single-file bind | The accepted speaker candidate survives cold boot without a partition write; the live hash, mount, HAL branch and stereo frame sequence passed machine gates | A separate human confirmation of the post-persistence left/right sequence was not recorded; earlier transient left/right trials were accepted |
 | Minimal systemless Google service set | GSF, Google Play services and Play Store register as privileged system packages; real account addition completed while root, Enforcing and the speaker layer remained active | App download, Play Protect certification and Play Integrity were not claimed |
 | Local Android VPN profile with two private egress paths | Both direct-VPS and VPS-to-authenticated-proxy paths returned HTTPS 204 with distinct public egress identities | Server addresses, credentials and the profile remain private |
+| Chrome/GMS FIDO2 and USB security key | A single GMS runtime permission restored the authentication UI and a fresh CTAP2 assertion; the owner confirmed ChatGPT login | Applies to this API32/GMS combination; see [the sanitized diagnosis](API32_PASSKEY_AND_TERMUX.md) |
 
 ## Hardware matrix
 
@@ -39,6 +40,7 @@ long-duration stability and any system newer than API32 remain open.
 | GNSS | Stack pass only: framework/provider registration works; no satellite fix yet |
 | Power | Partial: display sleep and system_suspend work, but USB-connected kernel suspend did not increment |
 | Reboot persistence | Pass for the retained API32 system, root path, speaker layer and later systemless services |
+| Browser hardware passkeys | Pass: Chrome/GMS, USB YubiKey assertion and user-confirmed ChatGPT login |
 
 ## Speaker root cause and reproducible patch
 

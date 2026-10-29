@@ -19,6 +19,14 @@ Optional systemless Google services and a local two-path Android VPN also passed
 their bounded acceptance gates. Their packages, account material, server
 addresses and credentials remain private.
 
+Browser hardware-passkey authentication now also passed end to end. A fresh
+Chrome request reached GMS but stopped at its API32 STORAGE permission check.
+Granting GMS only `READ_EXTERNAL_STORAGE` restored the FIDO2 UI, USB YubiKey
+CTAP2 assertion and user-confirmed ChatGPT login. See
+[the permission-level diagnosis](API32_PASSKEY_AND_TERMUX.md).
+The same report bounds the Termux launcher repair: a UID-level harness passed,
+while confirmation from the real foreground terminal remains pending.
+
 The current boundary is no longer basic boot or general hardware enumeration.
 It is actual satellite positioning, unplugged suspend/resume, rear torch,
 Bluetooth pairing, long-duration stability, post-persistence human stereo
@@ -45,6 +53,7 @@ confirmation and compatibility with any release newer than API32.
 | API32 persistent speaker layer | Cold boot retained root and Enforcing; one hash-gated bind produced the candidate live hash and corrected HAL path | Speaker compatibility can be delivered systemlessly without a partition rewrite | The post-persistence left/right sequence passed machine gates but lacks separate human confirmation |
 | API32 Google services | Read-only systemless mounts registered GSF, GMS and Play Store; a real account was added with no credential capture | The minimum Google service layer is usable on this API32 build | App download, certification and Integrity are not claimed |
 | API32 local VPN | Two private selectable paths returned HTTPS 204 with distinct egress identities through the tablet core | A removable Android VPN layer works without changing the system image | Profile and infrastructure remain private and are not published |
+| API32 browser passkey | GMS API149 permission failure, one runtime permission grant, fresh CTAP2 assertion and user-confirmed login | The observed no-popup failure was localized to GMS's STORAGE precheck and repaired at permission level | Scope is the installed API32/GMS combination; no credential or assertion payload is published |
 
 ## Chronology
 
@@ -68,6 +77,7 @@ confirmation and compatibility with any release newer than API32.
 | API32 hardware bring-up | Do the main tablet hardware surfaces work on the retained system? | Most pass; actual GNSS fix, torch, pairing and USB-free suspend remain open |
 | API32 speaker bring-up | Can playback be restored without rewriting vendor? | Yes; a four-byte detector candidate and hash-gated boot-time bind select the correct generic path |
 | API32 optional services | Can Google services and a removable VPN coexist with root, Enforcing and the speaker layer? | Yes within the published acceptance limits |
+| API32 browser passkey | Can Chrome invoke the existing USB security-key credential? | Yes after one evidence-bound GMS runtime permission repair |
 
 ## Next research questions
 
