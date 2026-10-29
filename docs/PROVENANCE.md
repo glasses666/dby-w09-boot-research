@@ -22,5 +22,10 @@ have separate checksums. A research release does not certify a generic installab
 Retain the author, original URL and version in write-ups. Distinguish findings independently
 reproduced from findings learned here. No global priority claim is made.
 
-A DOI will be recorded only after a third-party archive is published and resolves.
-No DOI is currently asserted.
+The 2026.10.29 source ZIP is also published in Zenodo:
+[10.5281/zenodo.23753129](https://doi.org/10.5281/zenodo.23753129).
+The DOI resolves to the public record with Queen_Glasser as creator and the
+existing rights reservation. Its downloaded ZIP matches the GitHub release's
+SHA-256 `b0faf63dd7b1d4f90f9e373759bed482b236a123a595b8c4292609443411d93e`.
+The archived source is commit `be48f084fac761f184c12934032d7507a20f1f11`;
+this later citation update does not replace the immutable release or archive files.

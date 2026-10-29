@@ -17,6 +17,7 @@
 | Browser passkey | Pass | Fresh GMS permission failure, narrow repair, CTAP2 assertion and owner-confirmed login; only sanitized excerpts published |
 | Reconstruction completeness | Explicitly bounded | Missing diagnostic/input derivation sources included; owner-bound boot and exact host tools still prevent stock-only end-to-end reproduction |
 | Citation and attribution | Set | CITATION.cff, AUTHORS.md, COPYRIGHT.md and public milestone links; no worldwide priority or legal protection guarantee |
+| Third-party archive | Pass | Zenodo DOI `10.5281/zenodo.23753129` resolves; published creator, custom rights and abstract verified; downloaded ZIP matches the immutable GitHub asset |
 
 The Git history starts at this sanitized snapshot. It does not inherit the
 private research repository's history or deleted objects.

@@ -6,6 +6,8 @@
 Original compatibility research, offline builders and evidence by
 **Queen_Glasser ([glasses666](https://github.com/glasses666))**.
 
+[![DOI: 10.5281/zenodo.23753129](https://zenodo.org/badge/DOI/10.5281/zenodo.23753129.svg)](https://doi.org/10.5281/zenodo.23753129)
+
 华为 MatePad 11 已运行 Android 12L / API32。显示、触控、相机、Wi-Fi、扬声器、
 Google 服务和 USB YubiKey 登录均有实机证据。这里保存从启动故障到可用系统的研究与最小修复。
 

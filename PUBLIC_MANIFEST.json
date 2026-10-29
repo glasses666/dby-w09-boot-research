@@ -12,8 +12,8 @@
     },
     {
       "path": "CITATION.cff",
-      "sha256": "920d336dfd1a3ce6d3068a493d141b33940e7eb32c0dd1f1a6b08222a8b029a3",
-      "size": 938
+      "sha256": "89491e4be8d5ccb96eb8058dd12ac8726331a78170f3221d97c5386e60bba567",
+      "size": 969
     },
     {
       "path": "CONTRIBUTING.md",
@@ -27,13 +27,13 @@
     },
     {
       "path": "PUBLICATION_CHECKLIST.md",
-      "sha256": "db06fd6e46bf424a67fb62b1a3d4ba89752c7e7aa1bddb95af05daf5294fe920",
-      "size": 2282
+      "sha256": "618076b52500707b2c567daf11c7c9a33415b46076848d5b3ed675bf3673d198",
+      "size": 2468
     },
     {
       "path": "README.md",
-      "sha256": "47c31ef9de7099cba88bd5dfb1fa894d3b80ab7d5cfa47014a58adb96dc1bff2",
-      "size": 7367
+      "sha256": "2e1dd89d3a899358176d9f17d102ab3ad00fd34a2b54363aa8c10422663d99c6",
+      "size": 7501
     },
     {
       "path": "SOURCE_MAP.md",
@@ -92,8 +92,8 @@
     },
     {
       "path": "docs/PROVENANCE.md",
-      "sha256": "9d09838601cefef37588b7b89b22039a09f92fc19aae73dded64616b3d645362",
-      "size": 1658
+      "sha256": "6e411d16f7269f5d98edc815bbec05535b0030fb296d851749ec41ec6dc77d98",
+      "size": 2055
     },
     {
       "path": "docs/RESEARCH_STATUS.md",
@@ -489,5 +489,5 @@
   "hash_algorithm": "sha256",
   "manifest_excluded_from_inventory": true,
   "schema": "dby-w09-public-manifest-v1",
-  "tree_sha256": "8952694eb99256e68105ae34fc8a6081514d0bc327ed1fddce615b18eaf0a1dd"
+  "tree_sha256": "fef056ffc799e13ecf71b9ba203098acde12d1431568a3d85c1852d55912aa4d"
 }
